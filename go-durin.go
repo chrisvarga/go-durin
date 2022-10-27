@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net"
+	"strings"
 )
 
 func Durin(message string) (string, error) {
@@ -19,5 +20,6 @@ func Durin(message string) (string, error) {
 	if err != nil {
 		return "", errors.New("(error) connection lost")
 	}
+	data = strings.TrimSuffix(data, "\n")
 	return data, nil
 }

@@ -19,7 +19,7 @@ func ExampleClient() {
     if err != nil {
         panic(err)
     }
-    val, err := durin.Durin("get key")
+    val, err = durin.Durin("get key")
     if err != nil {
         panic(err)
     }
