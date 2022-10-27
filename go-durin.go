@@ -21,5 +21,8 @@ func Durin(message string) (string, error) {
 		return "", errors.New("(error) connection lost")
 	}
 	data = strings.TrimSuffix(data, "\n")
+	if strings.HasPrefix(data, "(error)") {
+		return "", errors.New(data)
+	}
 	return data, nil
 }
