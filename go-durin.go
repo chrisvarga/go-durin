@@ -6,7 +6,7 @@ import (
 	"net"
 )
 
-func durin(message string) string {
+func Durin(message string) string {
 	conn, err := net.Dial("tcp", "localhost:8045")
 	if err != nil {
 		return "(error) failed to connect to durin"
