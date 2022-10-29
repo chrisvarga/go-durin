@@ -7,7 +7,7 @@ To install with go get, do:
 go get github.com/chrisvarga/go-durin
 ```
 
-## Quickstart
+## Quick start
 ```go
 import (
     "github.com/chrisvarga/go-durin"
@@ -15,11 +15,11 @@ import (
 )
 
 func ExampleClient() {
-    val, err := durin.Durin("set key value")
+    val, err := durin.Set("key", "value")
     if err != nil {
         panic(err)
     }
-    val, err = durin.Durin("get key")
+    val, err = durin.Get("key")
     if err != nil {
         panic(err)
     }
