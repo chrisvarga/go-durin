@@ -15,11 +15,18 @@ import (
 )
 
 func ExampleClient() {
-    val, err := durin.Set("key", "value")
+    // Initialize reusable connection.
+    ctx, err := Init("localhost:8045")
     if err != nil {
         panic(err)
     }
-    val, err = durin.Get("key")
+    defer (*ctx).Close()
+
+    val, err := durin.Set(ctx, "key", "value")
+    if err != nil {
+        panic(err)
+    }
+    val, err = durin.Get(ctx, "key")
     if err != nil {
         panic(err)
     }
